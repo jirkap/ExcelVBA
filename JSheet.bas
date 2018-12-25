@@ -55,7 +55,7 @@ Public Sub RemoveSelectedRows()
     Call Selection.EntireRow.Delete
 End Sub
 Public Sub RemoveFirstSelectedRow()
-    Call Rows(ActiveCell.Row).EntireRow.Delete
+    Call Rows(ActiveCell.row).EntireRow.Delete
 End Sub
 '/**
 ' * @param {Range} FromRange
@@ -65,10 +65,10 @@ End Sub
 ' *
 ' */
 Public Sub AddRowsBelow(FromRange As Range, NumberOfNewRows As Long, Optional RunForEach As String)
-    Dim intNewRowNr As Integer: intNewRowNr = FromRange.Row
+    Dim intNewRowNr As Integer: intNewRowNr = FromRange.row
     Dim i As Integer
     For i = 1 To NumberOfNewRows
-        Call FromRange.Offset(1).EntireRow.Insert(xlDown)
+        Call FromRange.offset(1).EntireRow.Insert(xlDown)
         If Not IsMissing(RunForEach) Then
             intNewRowNr = intNewRowNr + 1
             Call Application.Run(RunForEach, intNewRowNr)
@@ -91,7 +91,7 @@ End Sub
 ' *
 ' */
 Public Function GetLastRow(Sheet As Worksheet, Column As Integer) As Integer
-    GetLastRow = Sheet.Cells(Sheet.Rows.Count, Column).End(xlUp).Row
+    GetLastRow = Sheet.Cells(Sheet.Rows.Count, Column).End(xlUp).row
 End Function
 '/**
 ' * Get last filled column in given row
@@ -100,6 +100,23 @@ End Function
 ' * @returns {Integer}
 ' *
 ' */
-Public Function GetLastColumn(Sheet As Worksheet, Row As Integer) As Integer
-    GetLastColumn = Sheet.Cells(Row, Sheet.Columns.Count).End(xlToLeft).Column
+Public Function GetLastColumn(Sheet As Worksheet, row As Integer) As Integer
+    GetLastColumn = Sheet.Cells(row, Sheet.Columns.Count).End(xlToLeft).Column
 End Function
+'/**
+' * Loop all sheets and change their visibility
+' * @param {Workbook} Wbook
+' * @param {Integer} SheetToSkip
+' *
+' */
+Public Sub AllSheetsVisibility(Visibility As XlSheetVisibility, Optional SheetToSkip As Worksheet, Optional Wbook As Workbook)
+    If Wbook Is Nothing Then
+        Set Wbook = ThisWorkbook
+    End If
+    Dim w As Worksheet
+    For Each w In Wbook.Worksheets
+        If Not w Is SheetToSkip Or SheetToSkip Is Nothing Then
+            w.Visible = Visibility
+        End If
+    Next w
+End Sub
