@@ -53,7 +53,7 @@ Add via Browse... > System32 > FM20.dll
 
     Private Sub TextBox_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
         If KeyCode = 13 Then
-    	    Control_Click
+            Control_Click
             KeyCode = 0
         End If
     End Sub
@@ -64,15 +64,15 @@ Add via Browse... > System32 > FM20.dll
     Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean)
         Dim strFile As String
         If SaveAsUI = True Then ' Check whether Save As was used
-    	    Cancel = True
+            Cancel = True
             strFile = JWorkbook.SaveAs("Filename", JConst.strFilterBrowseExcelMacroEnabled, "Dialog Title")
             If strFile = False Then
-        	Cancel = True
+                Cancel = True
                 Exit Sub
             End If
             Application.EnableEvents = False 
-	    ThisWorkbook.SaveAs File, xlOpenXMLWorkbookMacroEnabled
-	    Application.EnableEvents = True
+            ThisWorkbook.SaveAs File, xlOpenXMLWorkbookMacroEnabled
+            Application.EnableEvents = True
         End If
     End Sub
 
@@ -86,12 +86,12 @@ Add via Browse... > System32 > FM20.dll
     Global rngSomeRange As Range ' ?
 
     Public Sub InitGlobals()
-	Set rngSelectMain = Data.Range("rngSomeRange")
+        Set rngSelectMain = Data.Range("rngSomeRange")
     End Sub
 
     ' In ThisWorkbook
     Private Sub Workbook_Open()
-	Module1.InitGlobals
+        Module1.InitGlobals
     End Sub
 
 ## Force users to enable Macros
@@ -100,7 +100,7 @@ Add via Browse... > System32 > FM20.dll
 
     ' In ThisWorkbook
     Private Sub Workbook_Open()
-	Dim ws As Worksheet
+        Dim ws As Worksheet
         For Each ws In ThisWorkbook.Worksheets
             ws.Visible = xlSheetVisible
         Next ws
@@ -108,13 +108,13 @@ Add via Browse... > System32 > FM20.dll
     End Sub
 
     Private Sub Workbook_BeforeClose(Cancel As Boolean)
-	Dim ws As Worksheet
+        Dim ws As Worksheet
         Sheets("WarningSheet").Visible = xlSheetVisible
         For Each ws In ThisWorkbook.Worksheets
-	    If ws.Name <> "WarningSheet" Then
+            If ws.Name <> "WarningSheet" Then
                 ws.Visible = xlVeryHidden
             End If
-	Next ws
+        Next ws
         ActiveWorkbook.Save
     End Sub
 
@@ -123,20 +123,20 @@ Add via Browse... > System32 > FM20.dll
     Sub UpdateAllREFFields()
     ' Based on code at http://www.gmayor.com/installing_macro.htm
         Dim oStory As Range
-	Dim oField As Field
-	For Each oStory In ActiveDocument.StoryRanges
-	    For Each oField In oStory.Fields
-	        If oField.Type = wdFieldRef Then oField.Update
-	    Next oField
+        Dim oField As Field
+        For Each oStory In ActiveDocument.StoryRanges
+            For Each oField In oStory.Fields
+                If oField.Type = wdFieldRef Then oField.Update
+            Next oField
             If oStory.StoryType <> wdMainTextStory Then
-	        While Not (oStory.NextStoryRange Is Nothing)
-		    Set oStory = oStory.NextStoryRange
-		    For Each oField In oStory.Fields
-		        If oField.Type = wdFieldRef Then oField.Update			
-		        Next oField
+                While Not (oStory.NextStoryRange Is Nothing)
+                    Set oStory = oStory.NextStoryRange
+                    For Each oField In oStory.Fields
+                        If oField.Type = wdFieldRef Then oField.Update			
+                    Next oField
                 Wend
-	    End If
-	Next oStory
-	Set oStory = Nothing
-	Set oField = Nothing
+            End If
+        Next oStory
+        Set oStory = Nothing
+        Set oField = Nothing
     End Sub
