@@ -8,7 +8,7 @@
 
 ## Passing variables
 
-`ByRef` – default,  alters value passed in ByRef
+`ByRef` – default,  alters passed value
 
 `ByVal` – use a copy of the argument passed in and not modify the source
 
