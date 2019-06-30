@@ -139,4 +139,4 @@ Add via Browse... > System32 > FM20.dll
 	Next oStory
 	Set oStory = Nothing
 	Set oField = Nothing
-End Sub
+    End Sub
