@@ -1,4 +1,9 @@
-# VBA notes
+# VBA 
+
+[Rubberduck](http://rubberduckvba.com/)<br/>
+[VBA Auto-Indenter](https://www.automateexcel.com/vba/code-formatter/)
+
+[https://github.com/Vitosh/VBA_personal](https://github.com/Vitosh/VBA_personal)
 
 ## Module options
 
