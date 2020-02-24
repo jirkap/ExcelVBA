@@ -5,6 +5,11 @@
 
 [https://github.com/Vitosh/VBA_personal](https://github.com/Vitosh/VBA_personal)
 
+## Add-ins
+
+`%userprofile%\AppData\Roaming\Microsoft\AddIns`
+
+
 ## Module options
 
 `Option Explicit` – use in every module to define variables using `Dim` or `ReDim` keywords
