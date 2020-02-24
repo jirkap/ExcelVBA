@@ -5,7 +5,7 @@
 
 [https://github.com/Vitosh/VBA_personal](https://github.com/Vitosh/VBA_personal)
 
-## Add-ins
+## AddIns
 
 `%userprofile%\AppData\Roaming\Microsoft\AddIns`
 
