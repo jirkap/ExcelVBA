@@ -7,7 +7,7 @@
 
 **Tools**<br/>
 [Rubberduck](http://rubberduckvba.com/)<br/>
-[VBA Auto-Indenter](https://www.automateexcel.com/vba/code-formatter/)
+[VBA Auto-Indenter](https://www.automateexcel.com/vba/code-formatter/)<br/>
 [https://github.com/Vitosh/VBA_personal](https://github.com/Vitosh/VBA_personal)
 
 ## AddIns
