@@ -1,14 +1,18 @@
 # VBA 
 
+[Collections, methods, objects and properties](https://www.wiseowl.co.uk/blog/s189/oop.htm)<br/>
+[Peltier Tech Blog](https://peltiertech.com/)<br/>
+[Good Patterns For VBA Error Handling – Stack Overflow](https://stackoverflow.com/questions/1038006/good-patterns-for-vba-error-handling)<br/>
+[Declare a Workbook as a Global variable – Stack Overflow](https://stackoverflow.com/questions/31536519/declare-a-workbook-as-a-global-variable)
+
+**Tools**<br/>
 [Rubberduck](http://rubberduckvba.com/)<br/>
 [VBA Auto-Indenter](https://www.automateexcel.com/vba/code-formatter/)
-
 [https://github.com/Vitosh/VBA_personal](https://github.com/Vitosh/VBA_personal)
 
 ## AddIns
 
 `%userprofile%\AppData\Roaming\Microsoft\AddIns`
-
 
 ## Module options
 
